@@ -1,0 +1,15 @@
+{
+    "name": "igoorgoomes/clinica",
+    "authors": [
+        {
+            "name": "Igor Gomes",
+            "email": "igorgomesdebrito.dev@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}
