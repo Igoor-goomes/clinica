@@ -19,9 +19,9 @@ class Medico extends Pessoa
     public function getCrm(): string {return $this->crm;}
     public function getEspecialidade(): string {return $this->especialidade;}
 
-    public function dadosMedico(): string
+    public function apresentar(): string
     {
-        return "Médico:{$this->getNome()} | CRM: {$this->crm} | Especialidade: {$this->especialidade}";
+        return "Medico:{$this->getNome()} | CRM: {$this->crm} | Especialidade: {$this->especialidade}";
     }
 
 }

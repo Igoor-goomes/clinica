@@ -20,7 +20,7 @@ class Paciente extends Pessoa
         return $this->convenio;
     }
 
-    public function dadosPaciente(): string
+    public function apresentar(): string
     {
         return "Nome: {$this->getNome()} | Idade:{$this->getIdade()} | Convênio: {$this->convenio}";
     }

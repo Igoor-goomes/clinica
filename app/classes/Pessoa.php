@@ -45,4 +45,9 @@ class Pessoa
     {
         return $this->idade;
     }
+
+    public function apresentar(): string
+    {
+        return "Nome: {$this->nome} | Idade:{$this->cpf} | Idade: {$this->idade}";
+    }
 }
