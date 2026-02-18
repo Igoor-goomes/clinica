@@ -3,15 +3,15 @@
 
 use app\classes\Medico;
 use app\classes\Paciente;
-use app\classes\Pessoa;
+use app\classes\Recepcionista;
 
 require '../vendor/autoload.php';
 
 
 $pessoas = [
-    new Pessoa ('Igor Gomes Araujo', '85111946497', 29),
-    new Medico ('Dra. Marcela', '06308172430', 22, 'CRM - 05626', 'Cardiologia'),
-    new Paciente ('Joselane Mateus Araujo Nunes Gomes', '50959315080', 49, 'Amil')
+    new Medico ('Dra. Marcela', '06308172430', 22, '05626 - CRMDF', 'Cardiologia'),
+    new Paciente ('Igor Gomes Araujo', '50959315080', 29, 'SulAmerica'),
+    new Recepcionista('Lane Nunes', '08105317044', 49, 'Recepção Geral')
 ];
 
 foreach ($pessoas as $pessoa) {

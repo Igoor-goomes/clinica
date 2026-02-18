@@ -12,7 +12,7 @@ class Paciente extends Pessoa
         private string $convenio
     )
     {
-        return parent::__construct($nome, $cpf, $idade);
+        parent::__construct($nome, $cpf, $idade);
     }
 
     public function getConvenio(): string
@@ -22,7 +22,7 @@ class Paciente extends Pessoa
 
     public function apresentar(): string
     {
-        return "Nome: {$this->getNome()} | Idade:{$this->getIdade()} | Convênio: {$this->convenio}";
+        return "Paciente: {$this->getNome()} | Idade:{$this->getIdade()} | Convênio: {$this->convenio}";
     }
     
 }

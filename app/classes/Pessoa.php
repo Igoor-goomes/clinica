@@ -1,7 +1,7 @@
 <?php
 namespace app\classes;
 
-class Pessoa 
+abstract class Pessoa 
 {
     // Atributos - que descrevem o estado do paciente | no PHP 8+ podemos passar os atributos e usar o método especial __construct de forma mais elegante    
     public function __construct(
@@ -46,8 +46,6 @@ class Pessoa
         return $this->idade;
     }
 
-    public function apresentar(): string
-    {
-        return "Nome: {$this->nome} | Idade:{$this->cpf} | Idade: {$this->idade}";
-    }
+    // Vai forçar as classes filhas a implemetarem esse método abstrato
+    abstract public function apresentar(): string;
 }

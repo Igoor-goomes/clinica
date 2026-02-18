@@ -13,7 +13,7 @@ class Medico extends Pessoa
         private readonly string $especialidade
     )
     {
-        return parent::__construct($nome, $cpf, $idade);
+        parent::__construct($nome, $cpf, $idade);
     }
 
     public function getCrm(): string {return $this->crm;}
