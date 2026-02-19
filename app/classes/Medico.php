@@ -1,9 +1,8 @@
 <?php
 namespace app\classes;
 
-// use app\classes\Pessoa; -> verificar se é obrigatório importar o use da classe pai
-
-class Medico extends Pessoa
+use app\interfaces\Agenda;
+class Medico extends Pessoa implements Agenda
 {
     public function __construct(
         string $nome, 
@@ -22,6 +21,11 @@ class Medico extends Pessoa
     public function apresentar(): string
     {
         return "Medico:{$this->getNome()} | CRM: {$this->crm} | Especialidade: {$this->especialidade}";
+    }
+
+    public function agendarConsulta(Paciente $paciente, string $data, string $horario): string
+    {
+        return "Consulta agenda com Dr(a): {$this->getNome()}, para o paciente {$paciente->getNome()} em {$data} ás {$horario}";
     }
 
 }

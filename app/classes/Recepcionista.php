@@ -1,7 +1,10 @@
 <?php
 namespace app\classes;
 
-class Recepcionista extends Pessoa {
+use app\interfaces\Agenda;
+
+class Recepcionista extends Pessoa implements Agenda
+{
 
     public function __construct(
         string $nome, 
@@ -18,5 +21,10 @@ class Recepcionista extends Pessoa {
     public function apresentar(): string
     {
         return "Nome: {$this->getNome()} | Setor: {$this->setor}";
+    }
+
+    public function agendarConsulta(Paciente $paciente, string $data, string $horario): string
+    {
+        return "Consulta agendada por {$this->getNome()}, para o paciente {$paciente->getNome()} no dia {$data} ás {$horario}";
     }
 }
