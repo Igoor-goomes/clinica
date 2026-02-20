@@ -1,8 +1,11 @@
 <?php
 namespace app\classes;
 
-use app\interfaces\Agenda;
-class Medico extends Pessoa implements Agenda
+use app\interfaces\Agendamento;
+use app\interfaces\Cancelamento;
+use app\interfaces\Reagendamento;
+
+class Medico extends Pessoa implements Agendamento, Reagendamento, Cancelamento
 {
     public function __construct(
         string $nome, 
@@ -25,7 +28,17 @@ class Medico extends Pessoa implements Agenda
 
     public function agendarConsulta(Paciente $paciente, string $data, string $horario): string
     {
-        return "Consulta agenda com Dr(a): {$this->getNome()}, para o paciente {$paciente->getNome()} em {$data} ás {$horario}";
+        return "Consulta agendada por médico(a) para o Paciente {$paciente->getNome()} no dia {$data} ás {$horario} com o Médico(a): {$this->getNome()}, Especialidade: {$this->getEspecialidade()}";
+    }
+
+    public function reagendarConsulta(Paciente $paciente, string $novaData, string $novoHorario): string
+    {
+        return "Consulta reagendada pelo médico(a) para o Paciente {$paciente->getNome()} no dia {$novaData} ás {$novoHorario} com o Médico(a): {$this->getNome()}, Especialidade: {$this->getEspecialidade()}";
+    }
+
+    public function cancelarConsulta(int $id_agendamento): string
+    {
+        return "Consulta cancelada!";
     }
 
 }
